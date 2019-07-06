@@ -1,0 +1,24 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras/2.0.29">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid81</TargetFrameworks>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackOnBuild>true</PackOnBuild>
+        <PackageId>SByteDev.MvvmCross.Plugins.UserAgent</PackageId>
+        <Title>MvvmCross UserAgent Plugin</Title>
+        <Authors>Denys Fiediaiev</Authors>
+        <Description>UserAgent Plugin for MvvmCross.</Description>
+        <Copyright>Denys Fiediaiev</Copyright>
+        <PackageTags>mvvmcross, useragent</PackageTags>
+        <PackageProjectUrl>https://github.com/SByteDev/DotNet.MvvmCross.Plugins.UserAgent</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/SByteDev/DotNet.MvvmCross.Plugins.UserAgent/blob/master/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/SByteDev/DotNet.MvvmCross.Plugins.UserAgent</RepositoryUrl>
+        <PackageVersion>1.0.0</PackageVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MvvmCross" Version="6.3.1" />
+        <PackageReference Include="SByteDev.Xamarin.Plugins.UserAgent" Version="1.0.0" />
+    </ItemGroup>
+
+</Project>
