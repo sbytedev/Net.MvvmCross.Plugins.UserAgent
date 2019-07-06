@@ -1,7 +1,7 @@
 ﻿using MvvmCross;
 using MvvmCross.Plugin;
 
-namespace SByte.MvvmCross.Plugins.UserAgent.Android
+namespace SByteDev.MvvmCross.Plugins.UserAgent
 {
     [MvxPlugin]
     [Preserve(AllMembers = true)]
