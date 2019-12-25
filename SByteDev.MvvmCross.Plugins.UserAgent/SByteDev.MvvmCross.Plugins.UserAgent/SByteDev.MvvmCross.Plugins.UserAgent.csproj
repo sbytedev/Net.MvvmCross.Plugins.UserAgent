@@ -4,7 +4,7 @@
     <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid90</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SByteDev.MvvmCross.Plugins.UserAgent</PackageId>
-    <PackageVersion>1.0.1</PackageVersion>
+    <PackageVersion>1.0.2</PackageVersion>
     <Title>MvvmCross UserAgent Plugin</Title>
     <Description>UserAgent Plugin for MvvmCross.</Description>
     <Copyright>SByteDev</Copyright>
