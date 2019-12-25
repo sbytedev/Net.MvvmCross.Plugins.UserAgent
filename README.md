@@ -6,8 +6,6 @@
 [![codecov](https://codecov.io/gh/SByteDev/Net.MvvmCross.Plugins.UserAgent/branch/master/graph/badge.svg)](https://codecov.io/gh/SByteDev/Net.MvvmCross.Plugins.UserAgent)
 [![CodeFactor](https://www.codefactor.io/repository/github/sbytedev/net.mvvmcross.plugins.useragent/badge)](https://www.codefactor.io/repository/github/sbytedev/net.mvvmcross.plugins.useragent)
 
-Based on [Xamarin UserAgent Plugin](https://github.com/SByteDev/Net.Xamarin.Plugins.UserAgent).
-
 Provides a cross-platform functionality to get the current [User-Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) value.
 
 ## Installation
@@ -24,6 +22,9 @@ using SByteDev.MvvmCross.Plugins.UserAgent;
 
 var userAgent = await Mvx.IoCProvider.Resolve<IMvxUserAgent>().GetUserAgentAsync(CancellationToken.None);
 ```
+
+## Implementation
+Based on [Xamarin UserAgent Plugin](https://github.com/SByteDev/Net.Xamarin.Plugins.UserAgent).
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
