@@ -1,0 +1,20 @@
+name: .NET Core
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+    - name: Build with dotnet
+      run: dotnet build --configuration Release
+    - name: Upload NuGet package
+      run: dotnet nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -s "github"
