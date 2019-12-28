@@ -1,0 +1,26 @@
+name: Publish
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+    - name: Restore NuGet packages
+      run: msbuild SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent.csproj -t:restore -p:Configuration=Release
+    - name: Build using MSBuild
+      run: msbuild SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent.csproj -p:Configuration=Release
+    - name: Add GitHub Package Registry source to NuGet
+      run: nuget sources add -name "github" -Source https://nuget.pkg.github.com/SByteDev/index.json -Username SByteDev -Password ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload package to GitHub Package Registry
+      run: dotnet nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -Source "github" -SkipDuplicate
+    - name: Upload package to NuGet
+      run: dotnet nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_API)KEY }} -SkipDuplicate
