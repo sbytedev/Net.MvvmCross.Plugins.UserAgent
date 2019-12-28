@@ -1,4 +1,4 @@
-name: Publish
+name: NuGet Publish
 
 on:
   push:
@@ -23,4 +23,4 @@ jobs:
     - name: Upload package to GitHub Package Registry
       run: dotnet nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -Source "github" -SkipDuplicate
     - name: Upload package to NuGet
-      run: dotnet nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_API)KEY }} -SkipDuplicate
+      run: dotnet nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_API_KEY }} -SkipDuplicate
