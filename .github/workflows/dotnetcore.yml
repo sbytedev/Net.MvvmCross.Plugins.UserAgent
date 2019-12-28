@@ -18,5 +18,7 @@ jobs:
       run: msbuild SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent.csproj -t:restore -p:Configuration=Release
     - name: Build using MSBuild
       run: msbuild SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent.csproj -p:Configuration=Release
+    - name: Setup NuGet config
+      run: sed 's/GITHUB_TOKEN/${{ secrets.GITHUB_TOKEN }}/g' .nuget.config > nuget.config
     - name: Upload NuGet package
       run: dotnet nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -s "github"
