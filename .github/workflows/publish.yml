@@ -24,11 +24,3 @@ jobs:
       run: nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -Source "github" -SkipDuplicate
     - name: Upload package to NuGet
       run: nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -Source "nuget" -ApiKey ${{ secrets.NUGET_API_KEY }} -SkipDuplicate
-    - name: Send Slack notification
-      env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-        SLACK_USERNAME: 'GitHub Actions'
-        SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
-      uses: Ilshidur/action-slack@master
-      with:
-        args: 'NuGet packages uploaded for ${{ secrets.GITHUB_REPOSITORY }}'
