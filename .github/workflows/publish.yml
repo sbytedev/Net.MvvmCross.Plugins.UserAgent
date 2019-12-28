@@ -19,10 +19,10 @@ jobs:
     - name: Build using MSBuild
       run: msbuild SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent.csproj -p:Configuration=Release
     - name: Upload package to GitHub Package Registry
-      run: nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -Source https://nuget.pkg.github.com/SByteDev/index.json -Username SByteDev -Password ${{ secrets.GITHUB_TOKEN }}  -SkipDuplicate
+      run: nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -Source https://nuget.pkg.github.com/SByteDev/index.json -ApiKey ${{ secrets.GITHUB_TOKEN }}  -SkipDuplicate
     - name: Upload package to NuGet
       run: nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_API_KEY }} -SkipDuplicate
-    - name: Slack notification
+    - name: Send Slack notification
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_USERNAME: 'GitHub Actions'
