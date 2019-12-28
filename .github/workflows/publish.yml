@@ -18,10 +18,12 @@ jobs:
       run: msbuild SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent.csproj -t:restore -p:Configuration=Release
     - name: Build using MSBuild
       run: msbuild SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent.csproj -p:Configuration=Release
+    - name: Setup NuGet config
+      run: sed 's/GITHUB_TOKEN/${{ secrets.GITHUB_TOKEN }}/g' .nuget.config > nuget.config
     - name: Upload package to GitHub Package Registry
-      run: dotnet nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -s https://nuget.pkg.github.com/SByteDev/index.json -k ${{ secrets.GITHUB_TOKEN }}
+      run: nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -Source "github" -SkipDuplicate
     - name: Upload package to NuGet
-      run: nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_API_KEY }} -SkipDuplicate
+      run: nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -Source "nuget" -ApiKey ${{ secrets.NUGET_API_KEY }} -SkipDuplicate
     - name: Send Slack notification
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
