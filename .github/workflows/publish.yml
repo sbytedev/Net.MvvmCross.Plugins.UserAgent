@@ -18,10 +18,8 @@ jobs:
       run: msbuild SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent.csproj -t:restore -p:Configuration=Release
     - name: Build using MSBuild
       run: msbuild SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent.csproj -p:Configuration=Release
-    - name: Add GitHub Package Registry source to NuGet
-      run: nuget sources add -name "github" -Source https://nuget.pkg.github.com/SByteDev/index.json -Username SByteDev -Password ${{ secrets.GITHUB_TOKEN }}
     - name: Upload package to GitHub Package Registry
-      run: nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -Source "github" -SkipDuplicate
+      run: dotnet nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -s https://nuget.pkg.github.com/SByteDev/index.json -k ${{ secrets.GITHUB_TOKEN }} -SkipDuplicate
     - name: Upload package to NuGet
       run: nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_API_KEY }} -SkipDuplicate
     - name: Send Slack notification
