@@ -24,14 +24,4 @@ jobs:
       run: nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -Source "github" -SkipDuplicate
     - name: Upload package to NuGet
       run: nuget push SByteDev.MvvmCross.Plugins.UserAgent/SByteDev.MvvmCross.Plugins.UserAgent/bin/Release/*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_API_KEY }} -SkipDuplicate
-    - name: Slack Notify
-      uses: rtCamp/action-slack-notify@v1.0.0
-      env:
-        SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
-        SLACK_COLOR: '#3278BD'
-        SLACK_ICON: https://github.com/SByteDev.png?size=48
-        SLACK_MESSAGE: 'Package Uploaded :rocket:'
-        SLACK_TITLE: ${{ secrets.GITHUB_REPOSITORY }}
-        SLACK_USERNAME: 'GitHub Actions'
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
       
