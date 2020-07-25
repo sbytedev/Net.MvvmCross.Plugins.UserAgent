@@ -1,9 +1,8 @@
 # MvvmCross UserAgent Plugin
 ![GitHub](https://img.shields.io/github/license/SByteDev/Net.MvvmCross.Plugins.UserAgent.svg)
 ![Nuget](https://img.shields.io/nuget/v/SByteDev.MvvmCross.Plugins.UserAgent.svg)
-
-[![Build Status](https://travis-ci.org/SByteDev/Net.MvvmCross.Plugins.UserAgent.svg?branch=master)](https://travis-ci.org/SByteDev/Net.MvvmCross.Plugins.UserAgent)
-[![codecov](https://codecov.io/gh/SByteDev/Net.MvvmCross.Plugins.UserAgent/branch/master/graph/badge.svg)](https://codecov.io/gh/SByteDev/Net.MvvmCross.Plugins.UserAgent)
+[![Build Status](https://img.shields.io/bitrise/8d14360844287246/develop?label=development&token=2GgXyMq4BE2Y7gURgeivIg&branch)](https://app.bitrise.io/app/d1fd3128deec4532)
+[![Build Status](https://img.shields.io/bitrise/8d14360844287246/master?label=production&token=2GgXyMq4BE2Y7gURgeivIg&branch)](https://app.bitrise.io/app/d1fd3128deec4532)
 [![CodeFactor](https://www.codefactor.io/repository/github/sbytedev/net.mvvmcross.plugins.useragent/badge)](https://www.codefactor.io/repository/github/sbytedev/net.mvvmcross.plugins.useragent)
 
 Provides a cross-platform functionality to get the current [User-Agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) value.
