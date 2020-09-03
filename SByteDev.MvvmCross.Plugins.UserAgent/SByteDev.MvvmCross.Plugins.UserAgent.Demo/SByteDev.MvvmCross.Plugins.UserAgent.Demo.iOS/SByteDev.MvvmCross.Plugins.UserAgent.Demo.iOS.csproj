@@ -7,6 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{C7B71886-EB1B-43C8-B2F5-73ACB1D9A585}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
     <OutputType>Exe</OutputType>
     <RootNamespace>SByteDev.MvvmCross.Plugins.UserAgent.Demo.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
@@ -92,7 +93,6 @@
     <None Include="Info.plist" />
     <Compile Include="MainViewController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -101,27 +101,7 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="MvvmCross, Version=6.4.1.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\MvvmCross.6.4.1\lib\xamarinios10\MvvmCross.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="OpenTK-1.0" />
-    <Reference Include="SByteDev.MvvmCross.Plugins.UserAgent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\SByteDev.MvvmCross.Plugins.UserAgent.1.0.2\lib\xamarinios10\SByteDev.MvvmCross.Plugins.UserAgent.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SByteDev.Xamarin.iOS.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\SByteDev.Xamarin.iOS.Extensions.1.0.4\lib\xamarinios10\SByteDev.Xamarin.iOS.Extensions.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SByteDev.Xamarin.Plugins.Base, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\SByteDev.Xamarin.Plugins.Base.1.0.0\lib\xamarinios10\SByteDev.Xamarin.Plugins.Base.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SByteDev.Xamarin.Plugins.UserAgent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\SByteDev.Xamarin.Plugins.UserAgent.1.0.2\lib\xamarinios10\SByteDev.Xamarin.Plugins.UserAgent.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing.Common.dll" />
     <Reference Include="System.Xml" />
@@ -129,6 +109,13 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MvvmCross" Version="7.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SByteDev.MvvmCross.Plugins.UserAgent\SByteDev.MvvmCross.Plugins.UserAgent.csproj">
+      <Project>{d4a70e36-99ec-4a53-80ba-ab8401a7716e}</Project>
+      <Name>SByteDev.MvvmCross.Plugins.UserAgent</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SByteDev.MvvmCross.Plugins.UserAgent.Demo\SByteDev.MvvmCross.Plugins.UserAgent.Demo.csproj">
       <Project>{E69D7A6C-707E-4C8C-8505-6692136322C8}</Project>
       <Name>SByteDev.MvvmCross.Plugins.UserAgent.Demo</Name>

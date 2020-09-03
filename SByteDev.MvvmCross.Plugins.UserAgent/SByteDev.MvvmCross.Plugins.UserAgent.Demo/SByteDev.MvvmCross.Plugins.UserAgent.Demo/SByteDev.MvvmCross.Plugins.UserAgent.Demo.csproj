@@ -10,6 +10,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="SByteDev.MvvmCross.Plugins.UserAgent" Version="1.0.2" />
+      <PackageReference Include="MvvmCross" Version="7.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\SByteDev.MvvmCross.Plugins.UserAgent\SByteDev.MvvmCross.Plugins.UserAgent.csproj" />
     </ItemGroup>
 </Project>
