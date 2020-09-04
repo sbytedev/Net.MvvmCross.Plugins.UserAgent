@@ -28,7 +28,7 @@
 
   <ItemGroup>
     <PackageReference Include="MvvmCross" Version="7.0.0" />
-    <PackageReference Include="SByteDev.Xamarin.Plugins.UserAgent" Version="1.0.3" />
+    <PackageReference Include="SByteDev.Xamarin.Plugins.UserAgent" Version="1.0.4" />
   </ItemGroup>
 
 </Project>
