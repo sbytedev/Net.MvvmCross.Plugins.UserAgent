@@ -4,7 +4,7 @@
     <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid10.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SByteDev.MvvmCross.Plugins.UserAgent</PackageId>
-    <PackageVersion>1.0.2</PackageVersion>
+    <PackageVersion>1.0.4</PackageVersion>
     <Title>MvvmCross UserAgent Plugin</Title>
     <Description>UserAgent Plugin for MvvmCross.</Description>
     <Copyright>SByteDev</Copyright>
@@ -16,7 +16,7 @@
     <PackageProjectUrl>https://github.com/SByteDev/Net.MvvmCross.Plugins.UserAgent</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReleaseNotes>Update MonoAndroid to 10.0 and SByteDev.Xamarin.Plugins.UserAgent to 1.0.3</PackageReleaseNotes>
+    <PackageReleaseNotes>Update SByteDev.Xamarin.Plugins.UserAgent to 1.0.4</PackageReleaseNotes>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/SByteDev/Net.MvvmCross.Plugins.UserAgent</RepositoryUrl>
@@ -28,7 +28,7 @@
 
   <ItemGroup>
     <PackageReference Include="MvvmCross" Version="7.0.0" />
-    <PackageReference Include="SByteDev.Xamarin.Plugins.UserAgent" Version="1.0.3" />
+    <PackageReference Include="SByteDev.Xamarin.Plugins.UserAgent" Version="1.0.4" />
   </ItemGroup>
 
 </Project>
