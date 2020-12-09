@@ -49,7 +49,7 @@
     <Reference Include="Mono.Android.Export" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MvvmCross" Version="7.0.1" />
+    <PackageReference Include="MvvmCross" Version="7.1.2" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
